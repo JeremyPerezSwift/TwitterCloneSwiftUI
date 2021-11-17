@@ -14,6 +14,7 @@
 		299A41D427438898007ACF6B /* TwitterCloneSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A41D327438898007ACF6B /* TwitterCloneSwiftUITests.swift */; };
 		299A41DE27438898007ACF6B /* TwitterCloneSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A41DD27438898007ACF6B /* TwitterCloneSwiftUIUITests.swift */; };
 		299A41E027438898007ACF6B /* TwitterCloneSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299A41DF27438898007ACF6B /* TwitterCloneSwiftUIUITestsLaunchTests.swift */; };
+		29FCA4642744D45800296B2D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FCA4632744D45800296B2D /* FeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		299A41D927438898007ACF6B /* TwitterCloneSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterCloneSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		299A41DD27438898007ACF6B /* TwitterCloneSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneSwiftUIUITests.swift; sourceTree = "<group>"; };
 		299A41DF27438898007ACF6B /* TwitterCloneSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29FCA4632744D45800296B2D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,10 @@
 		299A41C127438898007ACF6B /* TwitterCloneSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				29FCA4622744D42800296B2D /* Model */,
+				29FCA4612744D42600296B2D /* View */,
+				29FCA4602744D42400296B2D /* ViewModel */,
 				299A41C227438898007ACF6B /* TwitterCloneSwiftUIApp.swift */,
-				299A41C427438898007ACF6B /* ContentView.swift */,
 				299A41C627438898007ACF6B /* Assets.xcassets */,
 				299A41C827438898007ACF6B /* Preview Content */,
 			);
@@ -125,6 +129,29 @@
 				299A41DF27438898007ACF6B /* TwitterCloneSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = TwitterCloneSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		29FCA4602744D42400296B2D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		29FCA4612744D42600296B2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				299A41C427438898007ACF6B /* ContentView.swift */,
+				29FCA4632744D45800296B2D /* FeedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29FCA4622744D42800296B2D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				299A41C527438898007ACF6B /* ContentView.swift in Sources */,
+				29FCA4642744D45800296B2D /* FeedView.swift in Sources */,
 				299A41C327438898007ACF6B /* TwitterCloneSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

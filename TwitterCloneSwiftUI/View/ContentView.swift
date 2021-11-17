@@ -12,7 +12,7 @@ struct ContentView: View {
         
         NavigationView {
             TabView {
-                Text("Feed")
+                FeedView()
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")
@@ -30,16 +30,6 @@ struct ContentView: View {
                         Text("Messages")
                     }
             }
-            
-//            Text("Home")
-//                .navigationBarTitleDisplayMode(.inline)
-//                .toolbar {
-//                    ToolbarItem(placement: .principal) {
-//                        HStack {
-//                            Text("Home").font(.headline)
-//                        }
-//                    }
-//                }
             
             .navigationBarTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
