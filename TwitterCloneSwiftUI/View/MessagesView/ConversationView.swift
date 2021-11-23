@@ -17,7 +17,7 @@ struct ConversationView: View {
                 LazyVStack {
                     VStack {
                         ForEach(0..<20) { _ in
-                            NavigationLink(destination: Text("Destination")) {
+                            NavigationLink(destination: ChatView()) {
                                 ConversationCell()
                                     .padding(.top, 5)
                             }
