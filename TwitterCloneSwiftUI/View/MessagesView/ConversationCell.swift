@@ -25,7 +25,10 @@ struct ConversationCell: View {
                     Text("Lounger messages text to see what happens i does this")
                         .font(.system(size: 14))
                         .lineLimit(2)
+                        .multilineTextAlignment(.leading)
                 }
+                .foregroundColor(.black)
+//                .frame(height: 64)
             }
             
             Divider()

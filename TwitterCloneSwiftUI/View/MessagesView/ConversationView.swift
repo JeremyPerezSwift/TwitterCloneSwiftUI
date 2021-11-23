@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ConversationView: View {
+    @State var isShowingNewMessageView = false
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
@@ -15,14 +17,18 @@ struct ConversationView: View {
                 LazyVStack {
                     VStack {
                         ForEach(0..<20) { _ in
-                            ConversationCell()
-                                .padding(.top, 5)
+                            NavigationLink(destination: Text("Destination")) {
+                                ConversationCell()
+                                    .padding(.top, 5)
+                            }
+//                            ConversationCell()
+//                                .padding(.top, 5)
                         }
                     }.padding()
                 }
             }
             
-            Button(action: {}) {
+            Button(action: { self.isShowingNewMessageView.toggle() }) {
                 Image(systemName: "envelope")
                     .resizable()
                     .scaledToFit()
@@ -33,6 +39,9 @@ struct ConversationView: View {
             .foregroundColor(.white)
             .clipShape(Circle())
             .padding()
+            .sheet(isPresented: $isShowingNewMessageView) {
+                SearchView()
+            }
         }
     }
 }
