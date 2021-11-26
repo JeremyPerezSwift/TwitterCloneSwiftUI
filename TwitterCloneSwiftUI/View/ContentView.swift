@@ -10,30 +10,99 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        NavigationView {
-            TabView {
+//        NavigationView {
+//            TabView {
+//                FeedView()
+//                    .tabItem {
+//                        Image(systemName: "house")
+//                        Text("Home")
+//                    }
+//
+//                SearchView()
+//                    .tabItem {
+//                        Image(systemName: "magnifyingglass")
+//                        Text("Search")
+//                    }
+//
+//                ConversationView()
+//                    .tabItem {
+//                        Image(systemName: "envelope")
+//                        Text("Messages")
+//                    }
+//            }
+//
+//            .navigationBarTitle("Home")
+//            .navigationBarTitleDisplayMode(.inline)
+//
+//        }
+        
+//        NavigationView {
+//
+//        }
+        
+//        NavigationView {
+//            TabView {
+//                FeedView()
+//                    .navigationTitle("Home")
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .tabItem {
+//                        Image(systemName: "house")
+//                        Text("Home")
+//                    }
+//
+//                SearchView()
+//                    .navigationTitle("Search")
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .tabItem {
+//                        Image(systemName: "magnifyingglass")
+//                        Text("Search")
+//                    }
+//
+//                ConversationView()
+//                    .navigationTitle("Messages")
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .tabItem {
+//                        Image(systemName: "envelope")
+//                        Text("SearMessagesch")
+//                    }
+//            }
+//        }
+//        .navigationTitle("Messages")
+//        .navigationBarTitleDisplayMode(.inline)
+        
+        TabView {
+            NavigationView {
                 FeedView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
-                
+                    .navigationTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Image(systemName: "house")
+                Text("Home")
+            }
+
+            NavigationView {
                 SearchView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
-                
+                    .navigationTitle("Search")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
+            }
+
+            NavigationView {
                 ConversationView()
-                    .tabItem {
-                        Image(systemName: "envelope")
-                        Text("Messages")
+                    .navigationTitle("Messages")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .onAppear {
+                        UITabBar.appearance().isHidden = true
                     }
             }
-            
-            .navigationBarTitle("Home")
-            .navigationBarTitleDisplayMode(.inline)
-        
+            .tabItem {
+                Image(systemName: "envelope")
+                Text("SearMessagesch")
+            }
         }
         
         

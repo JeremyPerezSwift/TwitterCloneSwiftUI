@@ -9,9 +9,21 @@ import SwiftUI
 
 struct ConversationView: View {
     @State var isShowingNewMessageView = false
+    @State var showChat = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
+            
+            NavigationLink(isActive: $showChat) {
+                ChatView()
+//                    .onAppear(perform: {
+//                        UITabBar.appearance().barTintColor = .white
+//                        UITabBar.
+//                    })
+            } label: {
+                
+            }
+
             
             ScrollView {
                 LazyVStack {
@@ -39,9 +51,9 @@ struct ConversationView: View {
             .foregroundColor(.white)
             .clipShape(Circle())
             .padding()
-            .sheet(isPresented: $isShowingNewMessageView) {
-                SearchView()
-            }
+            .sheet(isPresented: $isShowingNewMessageView, content: {
+                NewMessageView(show: $isShowingNewMessageView, startChat: $showChat)
+            })
         }
     }
 }

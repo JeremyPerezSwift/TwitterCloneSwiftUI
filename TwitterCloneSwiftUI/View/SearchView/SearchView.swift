@@ -24,7 +24,6 @@ struct SearchView: View {
             }
             .padding(.leading)
         }
-        .navigationTitle("Search")
     }
 }
 
