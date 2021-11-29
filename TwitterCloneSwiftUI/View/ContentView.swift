@@ -71,6 +71,8 @@ struct ContentView: View {
 //        .navigationBarTitleDisplayMode(.inline)
         
         TabView {
+            
+        
             NavigationView {
                 FeedView()
                     .navigationTitle("Home")
