@@ -11,6 +11,8 @@
 		29125A4A274CB120006C7264 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29125A49274CB120006C7264 /* ConversationCell.swift */; };
 		29125A4C274CC0C4006C7264 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29125A4B274CC0C4006C7264 /* MessageInputView.swift */; };
 		29125A4E274CC1CC006C7264 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29125A4D274CC1CC006C7264 /* ChatView.swift */; };
+		2937CB76275BB2CE00D0EF20 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937CB75275BB2CE00D0EF20 /* User.swift */; };
+		2937CB78275BB3E400D0EF20 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937CB77275BB3E400D0EF20 /* ProfileViewModel.swift */; };
 		294552602754AAD600ABD9CB /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2945525F2754AAD600ABD9CB /* UserProfileView.swift */; };
 		294552622754AC3D00ABD9CB /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294552612754AC3D00ABD9CB /* ProfileHeaderView.swift */; };
 		294552642754AC6100ABD9CB /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294552632754AC6100ABD9CB /* ProfileActionButtonView.swift */; };
@@ -55,6 +57,8 @@
 		29125A49274CB120006C7264 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		29125A4B274CC0C4006C7264 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
 		29125A4D274CC1CC006C7264 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		2937CB75275BB2CE00D0EF20 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2937CB77275BB3E400D0EF20 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		2945525F2754AAD600ABD9CB /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		294552612754AC3D00ABD9CB /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		294552632754AC6100ABD9CB /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		29FCA4602744D42400296B2D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2937CB77275BB3E400D0EF20 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				2988286C274F57920039BC57 /* MockMessage.swift */,
+				2937CB75275BB2CE00D0EF20 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,8 +376,10 @@
 				29FCA4642744D45800296B2D /* FeedView.swift in Sources */,
 				294552622754AC3D00ABD9CB /* ProfileHeaderView.swift in Sources */,
 				29125A4E274CC1CC006C7264 /* ChatView.swift in Sources */,
+				2937CB78275BB3E400D0EF20 /* ProfileViewModel.swift in Sources */,
 				2988286D274F57920039BC57 /* MockMessage.swift in Sources */,
 				294552662754AC8700ABD9CB /* FilterButtonView.swift in Sources */,
+				2937CB76275BB2CE00D0EF20 /* User.swift in Sources */,
 				299A41C327438898007ACF6B /* TwitterCloneSwiftUIApp.swift in Sources */,
 				2978CAF7274628DF00417F93 /* TweetCell.swift in Sources */,
 				298750E4274E11F2006A0528 /* ChatBubble.swift in Sources */,

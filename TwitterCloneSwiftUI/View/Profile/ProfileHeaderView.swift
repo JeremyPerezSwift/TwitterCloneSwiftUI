@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
+    @ObservedObject var viewModel: ProfileViewModel
+    
     var body: some View {
         VStack {
             Image("spidey")
@@ -60,6 +62,6 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView()
+        ProfileHeaderView(viewModel: ProfileViewModel(user: User(dictionnary: ["":""])))
     }
 }

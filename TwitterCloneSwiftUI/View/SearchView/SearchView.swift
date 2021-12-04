@@ -19,7 +19,7 @@ struct SearchView: View {
                 ForEach(0..<10) { _ in
                     HStack { Spacer() }
                     
-                    NavigationLink(destination: UserProfileView()) {
+                    NavigationLink(destination: UserProfileView(user: User(dictionnary: ["":""]))) {
                         UserCell()
                             .padding(.top, 5)
                     }
