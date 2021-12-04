@@ -19,29 +19,22 @@ struct UserProfileView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
-                ProfileHeaderView(viewModel: viewModel)
-                    .padding()
-                
-                FilterButtonView(selectedOption: $selectedFilter)
-                    .padding()
-                
-                LazyVStack {
-                    VStack {
-                        ForEach(0..<20) { _ in
-                            TweetCell()
-                                .padding(.all, 10)
-                        }
-                    }.padding()
+            LazyVStack {
+                VStack {
+                    ProfileHeaderView(viewModel: viewModel)
+                        .padding()
+                    
+                    FilterButtonView(selectedOption: $selectedFilter)
+                        .padding()
+                    
+                    ForEach(0..<9) { tweet in
+                        TweetCell()
+                            .padding(.bottom)
+                    }
                 }
-                
-//                ForEach(0..<9) { tweet in
-//                    TweetCell()
-//                        .padding()
-//                }
+                .padding()
+                .navigationTitle("Spiderman")
             }
-            
-            .navigationTitle("Spiderman")
         }
     }
 }
