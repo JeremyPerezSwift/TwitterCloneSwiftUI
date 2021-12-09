@@ -1,13 +1,13 @@
 //
-//  CustomTextField.swift
+//  CustomSecureField.swift
 //  TwitterCloneSwiftUI
 //
-//  Created by Jérémy Perez on 08/12/2021.
+//  Created by Jérémy Perez on 09/12/2021.
 //
 
 import SwiftUI
 
-struct CustomTextField: View {
+struct CustomSecureField: View {
     @Binding var text: String
     let placeholder: Text
     let imageName: String
@@ -27,14 +27,14 @@ struct CustomTextField: View {
                     .frame(width: 20, height: 20)
                     .foregroundColor(.white)
                 
-                TextField("", text: $text)
+                SecureField("", text: $text)
             }
         }
     }
 }
 
-struct CustomTextField_Previews: PreviewProvider {
+struct CustomSecureField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(text: .constant(""), placeholder: Text("Email"), imageName: "envelope")
+        CustomSecureField(text: .constant(""), placeholder: Text("Password"), imageName: "lock")
     }
 }
