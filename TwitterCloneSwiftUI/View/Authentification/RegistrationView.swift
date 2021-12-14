@@ -13,24 +13,44 @@ struct RegistrationView: View {
     @State var username = ""
     @State var password = ""
     @State var showImagePicker = false
+    @State var selectedUIImage: UIImage?
+    @State var image: Image?
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    func loadImage() {
+        guard let selectedImg = selectedUIImage else { return }
+        image = Image(uiImage: selectedImg)
+    }
     
     var body: some View {
         ZStack {
             VStack {
                 Button(action: { showImagePicker.toggle() }) {
-                    Image("plus")
-                        .resizable()
-                        .renderingMode(.template)
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .padding(.top, 100)
-                        .padding(.bottom, 20)
-                        .foregroundColor(.white)
+                    ZStack {
+                        if let img = image {
+                            img
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 100, height: 100)
+                                .clipped()
+                                .cornerRadius(70)
+                                .padding(.top, 100)
+                                .padding(.bottom, 20)
+                        } else {
+                            Image("plus")
+                                .resizable()
+                                .renderingMode(.template)
+                                .scaledToFill()
+                                .frame(width: 100, height: 100)
+                                .padding(.top, 100)
+                                .padding(.bottom, 20)
+                                .foregroundColor(.white)
+                        }
+                    }
                 }
-                .sheet(isPresented: $showImagePicker) {
-                    ImagePicker()
-                }
+                .sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
+                    ImagePicker(image: $selectedUIImage)
+                })
                 
                 VStack(spacing: 20) {
                     CustomTextField(text: $fullname, placeholder: Text("Full Name"), imageName: "person")
