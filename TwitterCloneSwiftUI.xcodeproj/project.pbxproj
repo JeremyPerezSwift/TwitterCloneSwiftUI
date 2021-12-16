@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291099F5276B0DB70054FC5B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291099F4276B0DB70054FC5B /* AuthViewModel.swift */; };
 		29125A46274CB0F0006C7264 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29125A45274CB0F0006C7264 /* ConversationView.swift */; };
 		29125A4A274CB120006C7264 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29125A49274CB120006C7264 /* ConversationCell.swift */; };
 		29125A4C274CC0C4006C7264 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29125A4B274CC0C4006C7264 /* MessageInputView.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		291099F4276B0DB70054FC5B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		29125A45274CB0F0006C7264 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		29125A49274CB120006C7264 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		29125A4B274CC0C4006C7264 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				2937CB77275BB3E400D0EF20 /* ProfileViewModel.swift */,
+				291099F4276B0DB70054FC5B /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				29686803274B702D00DF3F8F /* UserCell.swift in Sources */,
 				294552642754AC6100ABD9CB /* ProfileActionButtonView.swift in Sources */,
 				29125A46274CB0F0006C7264 /* ConversationView.swift in Sources */,
+				291099F5276B0DB70054FC5B /* AuthViewModel.swift in Sources */,
 				29748416275DE4BA000C35ED /* NewTweetView.swift in Sources */,
 				2988286F274F5D100039BC57 /* MessageView.swift in Sources */,
 				29F0E1FF2761CABE0032554F /* CustomSecureField.swift in Sources */,
