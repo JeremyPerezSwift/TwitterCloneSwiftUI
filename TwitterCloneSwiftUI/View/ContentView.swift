@@ -8,7 +8,54 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
+        Group {
+            
+            if viewModel.userSession != nil {
+                
+                TabView {
+                    
+                    NavigationView {
+                        FeedView()
+                            .navigationTitle("Home")
+                            .navigationBarTitleDisplayMode(.inline)
+                    }
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
+
+                    NavigationView {
+                        SearchView()
+                            .navigationTitle("Search")
+                            .navigationBarTitleDisplayMode(.inline)
+                    }
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+
+                    NavigationView {
+                        ConversationView()
+                            .navigationTitle("Messages")
+                            .navigationBarTitleDisplayMode(.inline)
+                            .onAppear {
+                                UITabBar.appearance().isHidden = true
+                            }
+                    }
+                    .tabItem {
+                        Image(systemName: "envelope")
+                        Text("SearMessagesch")
+                    }
+                }
+                
+            } else {
+                LoginView()
+            }
+            
+        }
         
 //        NavigationView {
 //            TabView {
@@ -69,44 +116,6 @@ struct ContentView: View {
 //        }
 //        .navigationTitle("Messages")
 //        .navigationBarTitleDisplayMode(.inline)
-        
-        TabView {
-            
-        
-            NavigationView {
-                FeedView()
-                    .navigationTitle("Home")
-                    .navigationBarTitleDisplayMode(.inline)
-            }
-            .tabItem {
-                Image(systemName: "house")
-                Text("Home")
-            }
-
-            NavigationView {
-                SearchView()
-                    .navigationTitle("Search")
-                    .navigationBarTitleDisplayMode(.inline)
-            }
-            .tabItem {
-                Image(systemName: "magnifyingglass")
-                Text("Search")
-            }
-
-            NavigationView {
-                ConversationView()
-                    .navigationTitle("Messages")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .onAppear {
-                        UITabBar.appearance().isHidden = true
-                    }
-            }
-            .tabItem {
-                Image(systemName: "envelope")
-                Text("SearMessagesch")
-            }
-        }
-        
         
     }
 }

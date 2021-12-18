@@ -7,11 +7,33 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class AuthViewModel: ObservableObject {
     
-    func login() {
-        
+    @Published var userSession: Firebase.User?
+    @Published var isAuthentification = false
+    @Published var error: Error?
+    @Published var user: User?
+    
+    init() {
+        userSession = Auth.auth().currentUser
+    }
+    
+    func login(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let err = error {
+                print("DEBUG: Failed to upload login \(err.localizedDescription)")
+                return
+            } else {
+                print("DEBUG: Succesfully logged in")
+            }
+        }
+    }
+    
+    func sighOut() {
+        userSession = nil
+        try? Auth.auth().signOut()
     }
     
     func registerUser(email: String, password: String, username: String, fullname: String, profileImage: UIImage) {

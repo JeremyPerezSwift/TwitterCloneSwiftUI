@@ -287,8 +287,8 @@
 		29FCA4612744D42600296B2D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				29164D25276086F200A10FC5 /* Authentification */,
 				299A41C427438898007ACF6B /* ContentView.swift */,
+				29164D25276086F200A10FC5 /* Authentification */,
 				29748414275DE494000C35ED /* TweetsView */,
 				2945525E2754AAB900ABD9CB /* Profile */,
 				29D8080E27477E7000983F2D /* FeedView */,

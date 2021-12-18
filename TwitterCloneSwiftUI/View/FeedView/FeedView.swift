@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewTweetView = false
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         
@@ -25,7 +26,10 @@ struct FeedView: View {
                 }
             }
             
-            Button(action: { isShowingNewTweetView.toggle() }) {
+            Button(action: {
+//                isShowingNewTweetView.toggle()
+                viewModel.sighOut()
+            }) {
                 Image("quill-pen")
                     .resizable()
                     .renderingMode(.template)
