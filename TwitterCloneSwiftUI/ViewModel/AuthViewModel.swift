@@ -14,7 +14,7 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: Firebase.User?
     @Published var isAuthentification = false
     @Published var error: Error?
-    @Published var user: User?
+//    @Published var user: User?
     
     init() {
         userSession = Auth.auth().currentUser
@@ -27,6 +27,7 @@ class AuthViewModel: ObservableObject {
                 return
             } else {
                 print("DEBUG: Succesfully logged in")
+                self.userSession = result?.user
             }
         }
     }
@@ -60,13 +61,14 @@ class AuthViewModel: ObservableObject {
                             
                             guard let use = result?.user else { return }
                             
-                            let data = ["email": email, "username": username, "fullname": fullname, "profileImageUrl": profileImageUrl, "uid": use.uid]
+                            let data = ["email": email, "username": username.lowercased(), "fullname": fullname, "profileImageUrl": profileImageUrl, "uid": use.uid]
                             
                             Firestore.firestore().collection("users").document(use.uid).setData(data) { error3 in
                                 if let err = error3 {
                                     print("DEBUG: Error Firestore \(err.localizedDescription)")
                                 } else {
                                     print("DEBUG: Succesfully uploaded user data")
+                                    self.userSession = use
                                 }
                             }
                         }
