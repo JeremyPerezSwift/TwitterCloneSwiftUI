@@ -47,7 +47,7 @@ struct ContentView: View {
                     }
                     .tabItem {
                         Image(systemName: "envelope")
-                        Text("SearMessagesch")
+                        Text("Messages")
                     }
                 }
                 
