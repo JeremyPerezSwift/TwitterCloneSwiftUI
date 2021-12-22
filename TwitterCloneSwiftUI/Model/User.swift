@@ -5,7 +5,7 @@
 //  Created by Jérémy Perez on 04/12/2021.
 //
 
-import Foundation
+import Firebase
 
 struct User: Identifiable {
     
@@ -17,16 +17,18 @@ struct User: Identifiable {
     var stats: UserStats
     var bio: String
     
+    var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == self.id }
     var isFollowed = false
     
     init(dictionnary: [String: Any]) {
-        self.id = dictionnary["id"] as? String ?? ""
+        self.id = dictionnary["uid"] as? String ?? ""
         self.username = dictionnary["username"] as? String ?? ""
         self.profileImageUrl = dictionnary["profileImageUrl"] as? String ?? ""
         self.fullname = dictionnary["fullname"] as? String ?? ""
         self.email = dictionnary["email"] as? String ?? ""
         self.stats = UserStats(followers: 0, following: 0)
         self.bio = dictionnary["bio"] as? String ?? ""
+//        self.isCurrentUser = Auth.auth().currentUser?.uid == self.id
     }
     
 }
