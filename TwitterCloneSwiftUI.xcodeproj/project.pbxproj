@@ -285,8 +285,8 @@
 		29FCA4602744D42400296B2D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2937CB77275BB3E400D0EF20 /* ProfileViewModel.swift */,
 				291099F4276B0DB70054FC5B /* AuthViewModel.swift */,
+				2937CB77275BB3E400D0EF20 /* ProfileViewModel.swift */,
 				293171B12771A96E00A10651 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;

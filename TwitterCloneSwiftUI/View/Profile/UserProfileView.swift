@@ -21,7 +21,7 @@ struct UserProfileView: View {
         ScrollView {
             LazyVStack {
                 VStack {
-                    ProfileHeaderView(viewModel: viewModel, user: user)
+                    ProfileHeaderView(viewModel: viewModel, isFollowed: $viewModel.isFollowed)
                         .padding()
                     
                     FilterButtonView(selectedOption: $selectedFilter)
