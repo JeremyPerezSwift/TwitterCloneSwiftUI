@@ -28,6 +28,12 @@ class ProfileViewModel: ObservableObject {
     }
     
     func unfollow() {
+        guard let currenUid = Auth.auth().currentUser?.uid else { return }
         
+        COLLECTION_FOLLOWING.document(currenUid).collection("user-following").document(user.id).delete { error in
+            COLLECTION_FOLLOWERS.document(self.user.id).collection("user-followers").document(currenUid).delete { error2 in
+                self.isFollowed = false
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@ struct UserProfileView: View {
                     }
                 }
                 .padding()
-                .navigationTitle("Spiderman")
+                .navigationTitle(user.username)
             }
         }
     }
