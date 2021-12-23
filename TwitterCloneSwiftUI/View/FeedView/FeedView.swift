@@ -20,8 +20,13 @@ struct FeedView: View {
                 LazyVStack {
                     VStack {
                         ForEach(viewModel.tweets, id: \.timestamp) { tweet in
-                            TweetCell(tweet: tweet)
-                                .padding(.bottom)
+                            NavigationLink {
+                                TweetDetailView(tweet: tweet)
+                            } label: {
+                                TweetCell(tweet: tweet)
+                                    .padding(.bottom)
+                            }
+
                         }
                     }.padding()
                 }

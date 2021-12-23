@@ -25,6 +25,7 @@ struct TweetCell: View {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
                         Text(tweet.fullname)
+                            .foregroundColor(.black)
                             .font(.system(size: 13, weight: .semibold))
                         
                         Text("@\(tweet.username) -")
@@ -37,44 +38,13 @@ struct TweetCell: View {
                     }
                     
                     Text(tweet.caption)
+                        .foregroundColor(.black)
                         .font(.system(size: 15))
                 
                 }
             }
             
-            HStack {
-                Button(action: {}) {
-                    Image(systemName: "bubble.left")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                }
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image(systemName: "arrow.2.squarepath")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                }
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image(systemName: "heart")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                }
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image(systemName: "bookmark")
-                        .font(.system(size: 16))
-                        .frame(width: 32, height: 32)
-                }
-            }
-            .foregroundColor(.gray)
-            .padding(.horizontal)
+            TweetActionView()
             
             Divider()
             
