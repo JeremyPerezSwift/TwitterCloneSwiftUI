@@ -17,7 +17,7 @@ struct SearchView: View {
                 .padding()
             
             VStack(alignment: .leading) {
-                ForEach(viewModel.users, id: \.username) { user in
+                ForEach(viewModel.users, id: \.id) { user in
                     HStack { Spacer() }
                     
                     NavigationLink(destination: UserProfileView(user: user)) {

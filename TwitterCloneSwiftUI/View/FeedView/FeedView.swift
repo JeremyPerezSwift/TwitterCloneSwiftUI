@@ -9,7 +9,8 @@ import SwiftUI
 
 struct FeedView: View {
     @State var isShowingNewTweetView = false
-    @EnvironmentObject var viewModel: AuthViewModel
+//    @EnvironmentObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel = FeedViewModel()
     
     var body: some View {
         
@@ -18,8 +19,8 @@ struct FeedView: View {
             ScrollView {
                 LazyVStack {
                     VStack {
-                        ForEach(0..<20) { _ in
-                            TweetCell()
+                        ForEach(viewModel.tweets, id: \.timestamp) { tweet in
+                            TweetCell(tweet: tweet)
                                 .padding(.bottom)
                         }
                     }.padding()

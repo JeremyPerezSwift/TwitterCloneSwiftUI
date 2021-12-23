@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetCell: View {
+    let tweet: Tweet
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top, spacing: 12) {
-                Image("spidey")
+                KFImage(URL(string: tweet.profileImageUrl))
                     .resizable()
                     .scaledToFill()
                     .clipped()
@@ -21,10 +24,10 @@ struct TweetCell: View {
                 
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
-                        Text("Amazing Spiderman")
+                        Text(tweet.fullname)
                             .font(.system(size: 13, weight: .semibold))
                         
-                        Text("@spidey -")
+                        Text("@\(tweet.username) -")
                             .foregroundColor(.gray)
                             .font(.system(size: 13))
                         
@@ -33,7 +36,7 @@ struct TweetCell: View {
                             .font(.system(size: 13))
                     }
                     
-                    Text("Surprise ! I'm in no way home ! with the lizard and electro")
+                    Text(tweet.caption)
                         .font(.system(size: 15))
                 
                 }
@@ -80,8 +83,8 @@ struct TweetCell: View {
     }
 }
 
-struct TweetCell_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetCell()
-    }
-}
+//struct TweetCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TweetCell()
+//    }
+//}
