@@ -27,8 +27,7 @@ struct FeedView: View {
             }
             
             Button(action: {
-//                isShowingNewTweetView.toggle()
-                viewModel.sighOut()
+                isShowingNewTweetView.toggle()
             }) {
                 Image("quill-pen")
                     .resizable()
