@@ -11,7 +11,12 @@ import Kingfisher
 struct NewTweetView: View {
     @Binding var isPresented: Bool
     @State var captionText: String = ""
-    @ObservedObject var viewModel = UploadTweetViewModel()
+    @ObservedObject var viewModel: UploadTweetViewModel
+    
+    init(isPresented: Binding<Bool>) {
+        self._isPresented = isPresented
+        self.viewModel = UploadTweetViewModel(isPresented: isPresented)
+    }
     
     var body: some View {
         NavigationView {
@@ -51,8 +56,8 @@ struct NewTweetView: View {
     }
 }
 
-struct NewTweetView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewTweetView(isPresented: .constant(true))
-    }
-}
+//struct NewTweetView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewTweetView(isPresented: .constant(true))
+//    }
+//}
