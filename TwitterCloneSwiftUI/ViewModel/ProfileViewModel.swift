@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 class ProfileViewModel: ObservableObject {
     @Published var user: User
-    @Published var isFollowed = false
+//    @Published var isFollowed = false
     @Published var userTweets = [Tweet]()
     @Published var likedTweets = [Tweet]()
     
@@ -20,14 +20,32 @@ class ProfileViewModel: ObservableObject {
         checkIfUserIsFollowed()
         fetchUserTweets()
         fetchLikedTweets()
+        fetchUserStats()
     }
     
+    func tweets(forFilter filter: TweetFileterOptions) -> [Tweet] {
+        switch filter {
+            
+        case .tweets:
+            return userTweets
+        case .replies:
+            return [Tweet]()
+        case .likes:
+            return likedTweets
+        }
+    }
+   
+}
+
+// MARK: - API
+
+extension ProfileViewModel {
     func follow() {
         guard let currenUid = Auth.auth().currentUser?.uid else { return }
         
         COLLECTION_FOLLOWING.document(currenUid).collection("user-following").document(user.id).setData([:]) { error in
             COLLECTION_FOLLOWERS.document(self.user.id).collection("user-followers").document(currenUid).setData([:]) { error2 in
-                self.isFollowed = true
+                self.user.isFollowed = true
             }
         }
     }
@@ -37,17 +55,18 @@ class ProfileViewModel: ObservableObject {
         
         COLLECTION_FOLLOWING.document(currenUid).collection("user-following").document(user.id).delete { error in
             COLLECTION_FOLLOWERS.document(self.user.id).collection("user-followers").document(currenUid).delete { error2 in
-                self.isFollowed = false
+                self.user.isFollowed = false
             }
         }
     }
     
     func checkIfUserIsFollowed() {
         guard let currenUid = Auth.auth().currentUser?.uid else { return }
+        guard !user.isCurrentUser else { return }
         
         COLLECTION_FOLLOWING.document(currenUid).collection("user-following").document(user.id).getDocument { snapshot, error in
             guard let isFollowed = snapshot?.exists else { return }
-            self.isFollowed = isFollowed
+            self.user.isFollowed = isFollowed
         }
     }
     
@@ -79,15 +98,19 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
-    func tweets(forFilter filter: TweetFileterOptions) -> [Tweet] {
-        switch filter {
+    func fetchUserStats() {
+        let followersRef = COLLECTION_FOLLOWERS.document(user.id).collection("user-followers")
+        let followingRef = COLLECTION_FOLLOWING.document(user.id).collection("user-following")
+        
+        followersRef.getDocuments { snapshot, error in
+            guard let followerCount = snapshot?.documents.count else { return }
             
-        case .tweets:
-            return userTweets
-        case .replies:
-            return [Tweet]()
-        case .likes:
-            return likedTweets
+            followingRef.getDocuments { snapshot2, error2 in
+                guard let followingCount = snapshot2?.documents.count else { return }
+                
+                let stats = UserStats(followers: followerCount, following: followingCount)
+                self.user.stats = stats
+            }
         }
     }
     
