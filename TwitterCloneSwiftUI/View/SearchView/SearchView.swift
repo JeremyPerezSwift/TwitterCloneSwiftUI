@@ -20,7 +20,7 @@ struct SearchView: View {
                 ForEach(viewModel.users, id: \.id) { user in
                     HStack { Spacer() }
                     
-                    NavigationLink(destination: UserProfileView(user: user)) {
+                    NavigationLink(destination: LazyView(UserProfileView(user: user))) {
                         UserCell(user: user)
                             .padding(.top, 5)
                     }

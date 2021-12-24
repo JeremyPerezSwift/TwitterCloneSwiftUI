@@ -79,4 +79,16 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    func tweets(forFilter filter: TweetFileterOptions) -> [Tweet] {
+        switch filter {
+            
+        case .tweets:
+            return userTweets
+        case .replies:
+            return [Tweet]()
+        case .likes:
+            return likedTweets
+        }
+    }
+    
 }
