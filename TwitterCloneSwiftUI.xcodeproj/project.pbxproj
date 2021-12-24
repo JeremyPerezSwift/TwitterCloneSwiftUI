@@ -55,6 +55,7 @@
 		29DDAA032769C74B00DEB138 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 29DDAA022769C74B00DEB138 /* FirebaseFunctions */; };
 		29DDAA052769C74B00DEB138 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 29DDAA042769C74B00DEB138 /* FirebaseStorage */; };
 		29E3547D2775FDF700BCF456 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E3547C2775FDF700BCF456 /* ChatViewModel.swift */; };
+		29E3547F27760D7300BCF456 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E3547E27760D7300BCF456 /* ConversationViewModel.swift */; };
 		29F0E1FF2761CABE0032554F /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0E1FE2761CABE0032554F /* CustomSecureField.swift */; };
 		29FCA4642744D45800296B2D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FCA4632744D45800296B2D /* FeedView.swift */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 		29D8081227477F7800983F2D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		29DDA9FB2769C48800DEB138 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29E3547C2775FDF700BCF456 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		29E3547E27760D7300BCF456 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		29F0E1FE2761CABE0032554F /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		29FCA4632744D45800296B2D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -311,6 +313,7 @@
 				2941B4EE27747EF800D7C7CA /* FeedViewModel.swift */,
 				295C50442774AFB1006B0F4B /* TweetActionViewModel.swift */,
 				29E3547C2775FDF700BCF456 /* ChatViewModel.swift */,
+				29E3547E27760D7300BCF456 /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				29D8081127477EA000983F2D /* SearchView.swift in Sources */,
 				29125A4C274CC0C4006C7264 /* MessageInputView.swift in Sources */,
 				299A41C527438898007ACF6B /* ContentView.swift in Sources */,
+				29E3547F27760D7300BCF456 /* ConversationViewModel.swift in Sources */,
 				29FCA4642744D45800296B2D /* FeedView.swift in Sources */,
 				2941B4F127747F1E00D7C7CA /* Tweet.swift in Sources */,
 				2941B4EF27747EF800D7C7CA /* FeedViewModel.swift in Sources */,

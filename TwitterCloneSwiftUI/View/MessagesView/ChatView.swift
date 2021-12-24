@@ -32,7 +32,9 @@ struct ChatView: View {
             })
                 .padding()
         }
+        .navigationTitle(user.username)
     }
+    
 }
 
 //struct ChatView_Previews: PreviewProvider {
