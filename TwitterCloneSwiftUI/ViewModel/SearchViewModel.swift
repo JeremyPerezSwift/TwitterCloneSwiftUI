@@ -19,13 +19,11 @@ class SearchViewModel: ObservableObject {
         COLLECTION_USERS.getDocuments { snapshot, error in
             guard let documents = snapshot?.documents else { return }
             self.users = documents.map({ User(dictionnary: $0.data()) })
-            
-            print("DEBUG: COLLECTION_USERS \(self.users)")
-            
-//            documents.forEach { document in
-//                let user = User(dictionnary: document.data())
-//                self.users.append(user)
-//            }
         }
     }
+    
+    func filterdUsers(_ query: String) -> [User] {
+        return users.filter({ $0.fullname.lowercased().contains(query.lowercased()) || $0.username.contains(query.lowercased()) })
+    }
+    
 }
