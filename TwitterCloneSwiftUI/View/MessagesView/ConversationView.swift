@@ -14,25 +14,26 @@ struct ConversationView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
-            NavigationLink(isActive: $showChat) {
-                ChatView()
+//            NavigationLink(isActive: $showChat) {
+//                ChatView(user: )
 //                    .onAppear(perform: {
 //                        UITabBar.appearance().barTintColor = .white
 //                        UITabBar.
 //                    })
-            } label: {
-                
-            }
+//            } label: {
+//
+//            }
 
             
             ScrollView {
                 LazyVStack {
                     VStack {
                         ForEach(0..<20) { _ in
-                            NavigationLink(destination: ChatView()) {
-                                ConversationCell()
-                                    .padding(.top, 5)
-                            }
+                            ConversationCell()
+//                            NavigationLink(destination: ChatView(user: )) {
+//                                ConversationCell()
+//                                    .padding(.top, 5)
+//                            }
 //                            ConversationCell()
 //                                .padding(.top, 5)
                         }

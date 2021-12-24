@@ -54,6 +54,7 @@
 		29DDAA012769C74B00DEB138 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29DDAA002769C74B00DEB138 /* FirebaseFirestore */; };
 		29DDAA032769C74B00DEB138 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 29DDAA022769C74B00DEB138 /* FirebaseFunctions */; };
 		29DDAA052769C74B00DEB138 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 29DDAA042769C74B00DEB138 /* FirebaseStorage */; };
+		29E3547D2775FDF700BCF456 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E3547C2775FDF700BCF456 /* ChatViewModel.swift */; };
 		29F0E1FF2761CABE0032554F /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0E1FE2761CABE0032554F /* CustomSecureField.swift */; };
 		29FCA4642744D45800296B2D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FCA4632744D45800296B2D /* FeedView.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		29D8081027477EA000983F2D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		29D8081227477F7800983F2D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		29DDA9FB2769C48800DEB138 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		29E3547C2775FDF700BCF456 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		29F0E1FE2761CABE0032554F /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		29FCA4632744D45800296B2D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,6 +310,7 @@
 				2941B4EC2774748B00D7C7CA /* UploadTweetViewModel.swift */,
 				2941B4EE27747EF800D7C7CA /* FeedViewModel.swift */,
 				295C50442774AFB1006B0F4B /* TweetActionViewModel.swift */,
+				29E3547C2775FDF700BCF456 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				29125A4E274CC1CC006C7264 /* ChatView.swift in Sources */,
 				29164D272760870B00A10FC5 /* LoginView.swift in Sources */,
 				293171B42771A9D200A10651 /* Constants.swift in Sources */,
+				29E3547D2775FDF700BCF456 /* ChatViewModel.swift in Sources */,
 				2937CB78275BB3E400D0EF20 /* ProfileViewModel.swift in Sources */,
 				2988286D274F57920039BC57 /* MockMessage.swift in Sources */,
 				294552662754AC8700ABD9CB /* FilterButtonView.swift in Sources */,
