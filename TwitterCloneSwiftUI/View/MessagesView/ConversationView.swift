@@ -31,7 +31,7 @@ struct ConversationView: View {
                     VStack {
                         ForEach(viewModel.recentMessages) { recentMessage in
                             NavigationLink(destination: ChatView(user: recentMessage.user)) {
-                                ConversationCell()
+                                ConversationCell(message: recentMessage)
                                     .padding(.top, 5)
                             }
                         }

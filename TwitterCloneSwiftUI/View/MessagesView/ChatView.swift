@@ -29,6 +29,7 @@ struct ChatView: View {
             
             MessageInputView(messageText: $messageText, action: {
                 viewModel.sendMessage(messageText)
+                print("DEBUG: sendMessage")
             })
                 .padding()
         }
