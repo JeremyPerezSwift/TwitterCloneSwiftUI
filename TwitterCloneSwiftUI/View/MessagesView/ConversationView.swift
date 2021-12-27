@@ -11,19 +11,18 @@ struct ConversationView: View {
     @State var isShowingNewMessageView = false
     @State var showChat = false
     @ObservedObject var viewModel = ConversationViewModel()
+    @State var user: User?
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
-//            NavigationLink(isActive: $showChat) {
-//                ChatView(user: )
-//                    .onAppear(perform: {
-//                        UITabBar.appearance().barTintColor = .white
-//                        UITabBar.
-//                    })
-//            } label: {
-//
-//            }
+            if let use = user {
+                NavigationLink(isActive: $showChat) {
+                    ChatView(user: use)
+                } label: {
+
+                }
+            }
 
             
             ScrollView {
@@ -51,7 +50,7 @@ struct ConversationView: View {
             .clipShape(Circle())
             .padding()
             .sheet(isPresented: $isShowingNewMessageView, content: {
-                NewMessageView(show: $isShowingNewMessageView, startChat: $showChat)
+                NewMessageView(show: $isShowingNewMessageView, startChat: $showChat, user: $user)
             })
         }
     }
