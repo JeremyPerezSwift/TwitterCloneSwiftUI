@@ -32,7 +32,7 @@ struct TweetCell: View {
                             .foregroundColor(.gray)
                             .font(.system(size: 13))
                         
-                        Text("2w")
+                        Text(tweet.timestampString)
                             .foregroundColor(.gray)
                             .font(.system(size: 13))
                     }

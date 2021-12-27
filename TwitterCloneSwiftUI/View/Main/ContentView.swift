@@ -10,19 +10,23 @@ import Kingfisher
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var selectedIndex = 0
     
     var body: some View {
         Group {
             
             if viewModel.userSession != nil {
                 
-                TabView {
-                    
-                    NavigationView {
-                        FeedView()
-                            .navigationTitle("Home")
+                NavigationView {
+                    ZStack {
+                        
+                        MainTabView(selectedIndex: $selectedIndex)
+                            .cornerRadius(10)
+                            .ignoresSafeArea()
+                            .navigationBarTitle(viewModel.tabTitle(forIndex: selectedIndex))
+                            .navigationBarTitleDisplayMode(.inline)
                             .navigationBarItems(leading: Button(action: {
-                                viewModel.sighOut()
+                                
                             }, label: {
                                 if let user = viewModel.user {
                                     KFImage(URL(string: user.profileImageUrl))
@@ -33,36 +37,57 @@ struct ContentView: View {
                                         .cornerRadius(16)
                                 }
                             }))
-                            .navigationBarTitleDisplayMode(.inline)
-                    }
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
-
-                    NavigationView {
-                        SearchView()
-                            .navigationTitle("Search")
-                            .navigationBarTitleDisplayMode(.inline)
-                    }
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
-
-                    NavigationView {
-                        ConversationView()
-                            .navigationTitle("Messages")
-                            .navigationBarTitleDisplayMode(.inline)
-                            .onAppear {
-                                UITabBar.appearance().isHidden = true
-                            }
-                    }
-                    .tabItem {
-                        Image(systemName: "envelope")
-                        Text("Messages")
+                        
                     }
                 }
+                
+//                TabView {
+//
+//                    NavigationView {
+//                        FeedView()
+//                            .navigationTitle("Home")
+//                            .navigationBarItems(leading: Button(action: {
+//                                viewModel.sighOut()
+//                            }, label: {
+//                                if let user = viewModel.user {
+//                                    KFImage(URL(string: user.profileImageUrl))
+//                                        .resizable()
+//                                        .scaledToFill()
+//                                        .clipped()
+//                                        .frame(width: 32, height: 32)
+//                                        .cornerRadius(16)
+//                                }
+//                            }))
+//                            .navigationBarTitleDisplayMode(.inline)
+//                    }
+//                    .tabItem {
+//                        Image(systemName: "house")
+//                        Text("Home")
+//                    }
+//
+//                    NavigationView {
+//                        SearchView()
+//                            .navigationTitle("Search")
+//                            .navigationBarTitleDisplayMode(.inline)
+//                    }
+//                    .tabItem {
+//                        Image(systemName: "magnifyingglass")
+//                        Text("Search")
+//                    }
+//
+//                    NavigationView {
+//                        ConversationView()
+//                            .navigationTitle("Messages")
+//                            .navigationBarTitleDisplayMode(.inline)
+//                            .onAppear {
+//                                UITabBar.appearance().isHidden = true
+//                            }
+//                    }
+//                    .tabItem {
+//                        Image(systemName: "envelope")
+//                        Text("Messages")
+//                    }
+//                }
                 
             } else {
                 LoginView()
@@ -133,8 +158,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

@@ -17,11 +17,16 @@ struct ConversationView: View {
         ZStack(alignment: .bottomTrailing) {
             
             if let use = user {
-                NavigationLink(isActive: $showChat) {
-                    ChatView(user: use)
-                } label: {
-
+                if showChat {
+                    NavigationLink(destination: LazyView(ChatView(user: use)), isActive: $showChat, label: {})
                 }
+                
+                
+//                NavigationLink(isActive: $showChat) {
+//                    LazyView(ChatView(user: use))
+//                } label: {
+//
+//                }
             }
 
             
