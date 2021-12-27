@@ -29,7 +29,7 @@ struct ConversationView: View {
                 LazyVStack {
                     VStack {
                         ForEach(viewModel.recentMessages) { recentMessage in
-                            NavigationLink(destination: ChatView(user: recentMessage.user)) {
+                            NavigationLink(destination: LazyView(ChatView(user: recentMessage.user))) {
                                 ConversationCell(message: recentMessage)
                                     .padding(.top, 5)
                             }
