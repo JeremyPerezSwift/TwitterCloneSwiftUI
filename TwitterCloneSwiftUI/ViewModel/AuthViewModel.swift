@@ -105,6 +105,8 @@ class AuthViewModel: ObservableObject {
             return "Search"
         case 2:
             return "Messages"
+        case 3:
+            return ""
         default:
             return ""
         }
