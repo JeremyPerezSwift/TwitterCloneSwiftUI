@@ -6,7 +6,7 @@ The application is a Twitter clone that allows users to log in, share tweets, fo
 
 Developed entirely with SwiftUI 2.0, this app stands out with a complex user interface, embellished with elegant animations. The use of the MVVM architecture ensures optimal code organization. Furthermore, it is connected to Cloud Firestore, a real-time database, enabling efficient management of user data, including the upload and download of images via Firebase Storage. User authentication is also handled by Firebase, guaranteeing security and simplicity.
 
-Users benefit from advanced features such as monitoring database events, structuring data for optimal performance, and programmatically building views and controllers. The application can manage incoming JSON data, utilize CocoaTouch classes, UIKit, UserNotifications, and much more. Additionally, it integrates the Swift Package Manager for dependency management, providing a modern alternative to CocoaPods.
+Users benefit from advanced features such as monitoring database events, structuring data for optimal performance, and programmatically building views and controllers. The application can manage incoming JSON data, utilize CocoaTouch classes, SwiftUI, UserNotifications, and much more. Additionally, it integrates the Swift Package Manager for dependency management, providing a modern alternative to CocoaPods.
 
 The application also encompasses advanced techniques such as the use of protocols, the implementation of custom subclasses for clean and reusable code, dynamic sizing of collection view cells, as well as the creation of extensions and functions for an even cleaner and more reusable code.
 
